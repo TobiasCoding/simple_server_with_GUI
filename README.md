@@ -116,8 +116,24 @@ prefer-ipv4: true
 
 ### 4. Run Application in Production
 
+Run in foreground:
 ```bash
 sudo env "PATH=$PATH" uvicorn main:app --host 0.0.0.0 --port 80
+```
+
+Run in background:
+```bash
+sudo nohup env "PATH=$PATH" uvicorn main:app --host 0.0.0.0 --port 80 > app.log 2>&1 &
+```
+
+Search process in background:
+```bash
+ps aux | grep uvicorn
+```
+
+Kill process in background:
+```bash
+sudo kill -9 <PID>
 ```
 
 ---

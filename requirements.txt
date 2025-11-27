@@ -1,3 +1,4 @@
+mercadopago
 fastapi
 uvicorn
 jinja2
